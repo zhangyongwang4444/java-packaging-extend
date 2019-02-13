@@ -11,6 +11,9 @@ public class Main {
 
         Video video = new Video();
 
+        News new1 = read(new UrlNewsReader(), "path_sample");  //抽象类
+        News new2 = read(new FileNewsReader(), "path_sample2"); //抽象类
+
         // 这其实就是 多态 。。。。
         viewNews(news);  // implements 接口
         viewNews(video); // implements 接口
