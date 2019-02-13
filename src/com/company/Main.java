@@ -1,9 +1,6 @@
 package com.company;
 
-import com.company.model.Displayable;
-import com.company.model.FileNews;
-import com.company.model.News;
-import com.company.model.Video;
+import com.company.model.*;
 
 
 public class Main {
@@ -20,9 +17,37 @@ public class Main {
         viewNews(fileNews);  // extends 继承
     }
 
-    // 使用接口
+    //使用 抽象类 简化代码！！！
+    private static News read(NewsReader reader, String path) {
+        return reader.readNews(path);
+    }
+
+    /////////////////////////////////////////////////////////
+    private static News read(UrlNewsReader reader, String path) {
+        return reader.readNews(path);
+    }
+
+    private static News read(FileNewsReader reader, String path) {
+        return reader.readNews(path);
+    }
+    ///////////////////////////////////////////////////////////////
+
+
+    // 使用 接口 简化代码！！！
     private static void viewNews(Displayable item) {
         item.display();
-        System.out.println("播放完毕");
+        System.out.println("news播放完毕");
     }
+
+    //////////////////////////////////////////////////////////
+    private static void viewVodeo(Video video) {
+        video.display();
+        System.out.println("video播放完毕");
+    }
+
+    private static void viewLecture(Lecture lecture) {
+        lecture.display();
+        System.out.println("lecture播放完毕");
+    }
+    ///////////////////////////////////////////////////////////
 }
