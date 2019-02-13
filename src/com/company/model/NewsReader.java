@@ -5,9 +5,6 @@ public abstract class NewsReader {
 
     private Integer x;
 
-    public NewsReader(Integer x) {
-        this.x = x;
-    }
 
     public Integer getX() {
         return x;

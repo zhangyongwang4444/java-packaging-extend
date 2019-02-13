@@ -1,6 +1,6 @@
 package com.company.model;
 
-public class News {
+public class News implements Displayable {
     protected String title;
     protected String content;
 
@@ -22,8 +22,10 @@ public class News {
         return content;
     }
 
+
     //控制如何显示
-    public String dispaly() {
-        return title + "\n" + content;
+    @Override
+    public void display() {
+        System.out.println(title + "\n" + content);
     }
 }

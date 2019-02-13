@@ -27,7 +27,7 @@ public class FileNews extends News {
 
     //子类 重新实现 父类的 方法
     @Override
-    public String dispaly() {
-        return title + ":" + content;
+    public void display() {
+        System.out.println(title + ":" + content);
     }
 }

@@ -1,9 +1,7 @@
 package com.company.model;
 
 public class FileNewsReader extends NewsReader {
-    public FileNewsReader(Integer x) {
-        super(x);
-    }
+
 
     @Override
     public News readNews(String path) {
