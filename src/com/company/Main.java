@@ -8,18 +8,24 @@ public class Main {
     public static void main(String[] args) {
         News news = new News("abc", "父类");
         FileNews fileNews = new FileNews("abc", "子类");
-
         Video video = new Video();
+
+
+        // 以下这其实就是 多态 。。。。
+
+
+        viewNews(news);  // implements 接口
+        viewNews(video); // implements 接口
+        viewNews(fileNews);  // extends 继承了父类 News 的 接口
+        Displayable displayable = new Video();
+        displayable.display();
 
         News new1 = read(new UrlNewsReader(), "path_sample");  //抽象类
         News new2 = read(new FileNewsReader(), "path_sample2"); //抽象类
-
         NewsReader newsReader = new UrlNewsReader();
         newsReader.readNews("path_simple");
-        // 这其实就是 多态 。。。。
-//        viewNews(news);  // implements 接口
-//        viewNews(video); // implements 接口
-//        viewNews(fileNews);  // extends 继承
+
+
     }
 
     //使用 继承 抽象类 简化代码！！！
